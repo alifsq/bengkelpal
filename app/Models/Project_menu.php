@@ -9,7 +9,8 @@ class Project_menu extends Model
 {
     protected $fillable = [
         'nama_project',
-        'tanggal_project',
+        'start_project',
+        'finish_project',
         'keterangan_project',
     ];
     use HasFactory;

@@ -26,7 +26,7 @@
     <!--card table-->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
+            <h3 class="card-title">Data Project</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -35,7 +35,7 @@
                     <tr>
                         <th class="text-center">ID Project</th>
                         <th class="text-center">Nama Project</th>
-                        <th class="text-center">Tanggal</th>
+                        <th class="text-center">Tanggal Mulai / Selesai</th>
                         <th class="text-center">Keterangan</th>
                         <th class="text-center">Aksi</th>
                     </tr>
@@ -46,15 +46,25 @@
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->nama_project }}</td>
-                        <td>{{ $item->tanggal_project }}</td>
+                        <td>{{ $item->start_project }} / {{ $item->finish_project }}</td>
                         <td>{{ $item->keterangan_project }}</td>
-                        <td class="text-center">
-                            <button id="btn-edit-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-tanggal_project="{{ $item->tanggal_project }}" data-keterangan_project="{{ $item->keterangan_project }}">
-                                <i class="fas fa-edit"></i>
-                            </button>
-                            <button id="btn-delete-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" href="/projectmenu/{{">
-                                <i class="fas fa-edit"></i>
-                            </button>
+                        <td>
+                            <div class="float-lg-right">
+                                <form action="/projectmenu/{{ $item->id }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" id="btn-delete-project" class="btn btn-default bg-red sm-right mr-3 mb-3">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!--Tombol edit-->
+                            <div class="float-lg-right">
+                                <button id="btn-edit-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-start_project="{{ $item->start_project }}" data-finish_project="{{ $item->finish_project }}" data-keterangan_project="{{ $item->keterangan_project }}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                            <!--Tombol edit-->
                         </td>
                     </tr>
                     @endforeach
@@ -64,7 +74,7 @@
                     <tr>
                         <th class="text-center">ID Project</th>
                         <th class="text-center">Nama Project</th>
-                        <th class="text-center">Tanggal</th>
+                        <th class="text-center">Tanggal Mulai - Selesai</th>
                         <th class="text-center">Keterangan</th>
                         <th class="text-center">Aksi</th>
                     </tr>
@@ -86,7 +96,8 @@
                 </div>
 
                 <div class="modal-body">
-                    <form method="POST" action="/projectmenu">@csrf
+                    <form method="POST" action="/projectmenu">
+                        @csrf
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="InputNama">Nama Project</label>
@@ -94,9 +105,15 @@
                             </div>
                             <!--/Date-->
                             <div class="form-group">
-                                <label>Tanggal</label>
+                                <label>Tanggal Mulai</label>
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest"name="start_project">
+                                    <input id="start_project" type="date" class="form-control " name="start_project" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tanggal Selesai</label>
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input type="date" class="form-control " name="tanggal_project" />
+                                    <input id="finish_project" type="date" class="form-control " name="finish_project" />
                                 </div>
                             </div>
 
@@ -120,8 +137,9 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal Add Data-->
+
     <!-- /.modal Edit Data-->
-    <div class="modal fade" id="modal-edit">
+    <div class="modal fade" id="modal-edit-projectmenu">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,19 +156,25 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="InputNama">Nama Project</label>
-                                <input type="text" class="form-control" id="nama_project" name="nama_project">
+                                <input type="text" class="form-control" id="nama_project-edit" name="nama_project">
                             </div>
                             <!--/Date-->
                             <div class="form-group">
-                                <label>Tanggal</label>
+                                <label>Tanggal Mulai</label>
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="tanggal_project" type="date" class="form-control " name="tanggal_project" />
+                                    <input id="start_project-edit" type="date" class="form-control " name="start_project" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tanggal Selesai</label>
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                    <input id="finish_project-edit" type="date" class="form-control " name="finish_project" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="InputKeterangan">Keterangan</label>
-                                <input type="text" class="form-control" id="keterangan_project" placeholder="Keterangan" name="keterangan_project">
+                                <input type="text" class="form-control" id="keterangan_project-edit" placeholder="Keterangan" name="keterangan_project">
                             </div>
                         </div>
                         <div class="modal-footer justify-content-between">
@@ -167,9 +191,11 @@
 
         <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal Add Data-->
+    <!-- /.modal Edit Data-->
 
 </div>
+
+
 
 
 

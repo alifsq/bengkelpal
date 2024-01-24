@@ -15,7 +15,8 @@ class ProjectMenuSeeder extends Seeder
     {
         DB::table('project_menus')->insert([
             'nama_project'=> 'Kalibrasi alat ukur',
-            'tanggal_project' => '2024-01-02',
+            'start_project' => '2024-01-02',
+            'finish_project'=> '2024-01-03',
             'keterangan_project'=> 'Pekerjaan kalibrasi alat ukur',
         ]);
     }

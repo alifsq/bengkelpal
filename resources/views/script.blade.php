@@ -1,20 +1,47 @@
 <script type="text/javascript">
     $(document).ready(function() {
-        $(document).on('click','#btn-edit-project',function(){
+        $(document).on('click', '#btn-edit-project', function() {
             var id = $(this).data('id');
             var namaproject = $(this).data('nama_project');
-            var tanggalproject = $(this).data('tanggal_project');
+            var startproject = $(this).data('start_project');
+            var finishproject = $(this).data('finish_project');
             var keteranganproject = $(this).data('keterangan_project');
 
-            $('#modal-edit').modal('show');
+            $('#modal-edit-projectmenu').modal('show');
             $('#id').val(id);
-            $('#nama_project').val(namaproject);
-            $('#tanggal_project').val(tanggalproject);
-            $('#keterangan_project').val(keteranganproject);
+            $('#nama_project-edit').val(namaproject);
+            $('#start_project-edit').val(startproject);
+            $('#finish_project-edit').val(finishproject);
+            $('#keterangan_project-edit').val(keteranganproject);
+            $('#formEdit').attr("action", "/projectmenu/" + id);
+        });
+        $(document).on('click', '#btn-edit-menulanjutan', function() {
+            var id = $(this).data('id');
+            var nip = $(this).data('nip');
+            var nama = $(this).data('nama');
+            var jabatan = $(this).data('jabatan');
 
+            $('#modal-edit-menulanjutan').modal('show');
+            $('#id').val(id);
+            $('#nip').val(nip);
+            $('#nama').val(nama);
+            $('#jabatan').val(jabatan);
+            $('#formEdit').attr("action", "/menulanjutan/" + id);
+        });
+        $(document).on('click', '#btn-edit-tools', function() {
+            var id = $(this).data('id');
+            var nama_tools = $(this).data('nama_tools');
+            var jumlah_tools = $(this).data('jumlah_tools');
+            var status_tools = $(this).data('status_tools');
+            var kalibrasi_date = $(this).data('kalibrasi_date');
 
-            $('#formEdit').attr("action","/projectmenu/"+id);
+            $('#modal-edit-tools').modal('show');
+            $('#id').val(id);
+            $('#nama_tools-edit').val(nama_tools);
+            $('#jumlah_tools-edit').val(jumlah_tools);
+            $('#status_tools-edit').val(status_tools);
+            $('#kalibrasi_date-edit').val(kalibrasi_date);
+            $('#formEdit').attr("action", "/tools/" + id);
         });
     });
-
 </script>

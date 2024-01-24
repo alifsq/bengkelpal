@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('project_menus', function (Blueprint $table) {
             $table->id();
             $table->string('nama_project');
-            $table->date('tanggal_project');
+            $table->date('start_project');
+            $table->date('finish_project');
             $table->string('keterangan_project');
             $table->timestamps();
         });

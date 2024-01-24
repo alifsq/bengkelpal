@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu_lanjutan extends Model
 {
     protected $fillable = [
+        'nip',
         'nama',
         'jabatan',
     ];

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('menu_lanjutans', function (Blueprint $table) {
             $table->id();
+            $table->integer('nip');
             $table->string('nama');
             $table->string('jabatan');
             $table->timestamps();

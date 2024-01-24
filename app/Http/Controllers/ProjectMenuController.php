@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project_menu;
 use Illuminate\Http\Request;
 
+
 class ProjectMenuController extends Controller
 {
     public function index()
@@ -19,7 +20,8 @@ class ProjectMenuController extends Controller
     {
         $validatedData = $request->validate([
             'nama_project' => 'required',
-            'tanggal_project' => 'required',
+            'start_project' => 'required',
+            'finish_project'=> 'required',
             'keterangan_project' => 'required|min:5',
         ]);
         Project_menu::create($validatedData); //untuk menyimpan data
@@ -31,13 +33,15 @@ class ProjectMenuController extends Controller
     {
         $validatedData = $request->validate([
             'nama_project' => 'required',
-            'tanggal_project' => 'required',
+            'start_project' => 'required',
+            'finish_project'=> 'required',
             'keterangan_project' => 'required|min:5',
         ]);
 
         $kegiatans = Project_menu::find($id);
         $kegiatans->nama_project = $validatedData['nama_project'];
-        $kegiatans->tanggal_project = $validatedData['tanggal_project'];
+        $kegiatans->start_project = $validatedData['start_project'];
+        $kegiatans->finish_project = $validatedData['finish_project'];
         $kegiatans->keterangan_project = $validatedData['keterangan_project'];
 
         $kegiatans->save();
@@ -47,8 +51,7 @@ class ProjectMenuController extends Controller
     }
     public function destroy($id)
     {
-        $post = Project_menu::findOrFail($id);
-        $post->delete();
+        Project_menu::where('id',$id)->delete();
 
         return redirect('/projectmenu');
     }

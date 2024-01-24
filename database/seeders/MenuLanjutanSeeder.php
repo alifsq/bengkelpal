@@ -14,6 +14,7 @@ class MenuLanjutanSeeder extends Seeder
     public function run(): void
     {
         DB::table('menu_lanjutans')->insert([
+            'nip' => '200602036',
             'nama' => 'Burhan Admin',
             'jabatan' => 'Operator',
         ]);
