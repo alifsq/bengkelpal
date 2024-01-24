@@ -52,7 +52,7 @@
                             <button id="btn-edit-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-tanggal_project="{{ $item->tanggal_project }}" data-keterangan_project="{{ $item->keterangan_project }}">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button id="btn-edit-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-tanggal_project="{{ $item->tanggal_project }}" data-keterangan_project="{{ $item->keterangan_project }}">
+                            <button id="btn-delete-project" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" href="/projectmenu/{{">
                                 <i class="fas fa-edit"></i>
                             </button>
                         </td>
