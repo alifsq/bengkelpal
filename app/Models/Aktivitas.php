@@ -11,7 +11,8 @@ class Aktivitas extends Model
         'id_project',
         'nama_aktivitas',
         'status_aktivitas',
-        'tanggal_aktivitas',
+        'start_aktivitas',
+        'finish_aktivitas',
         'keterangan_aktivitas',
     ];
     use HasFactory;

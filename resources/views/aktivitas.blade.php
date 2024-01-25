@@ -23,6 +23,7 @@
         <button type="button" class="btn btn-default bg-green sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-add-aktivitas">Tambah Aktivitas</button>
     </div>
     <!--/ End Button add data-->
+
     <!-- /.modal Add Data-->
     <div class="modal fade" id="modal-add-aktivitas">
         <div class="modal-dialog modal-lg">
@@ -38,31 +39,40 @@
                     <form method="POST" action="/aktivitas">
                         @csrf
                         <div class="card-body">
-
+                            <!--select Project-->
+                            <div class="form-group ">
+                                <label>Project</label>
+                                <select class="form-control select2 text-center" style="width: 100%;" name="id_project">
+                                    @foreach($isicombo as $a)
+                                    <option value="{{ $a->id }}"> {{ $a->nama_project }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <!--/select Project-->
                             <div class="form-group">
                                 <label for="InputNama">Nama Aktivitas</label>
-                                <input type="text" class="form-control" id="InputNama" placeholder="Nama Aktivitas" name="nama_project">
+                                <input type="text" class="form-control" id="add-nama-aktivitas" placeholder="Nama Aktivitas" name="nama_aktivitas">
                             </div>
                             <!--/Date-->
                             <div class="form-group">
                                 <label>Tanggal Mulai</label>
-                                <div class="input-group date" id="reservationdate" data-target-input="nearest" name="start_project">
-                                    <input id="start_project" type="date" class="form-control " name="start_project" />
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest" name="start_aktivitas">
+                                    <input id="add-start-aktivitas" type="date" class="form-control " name="start_aktivitas" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Selesai</label>
                                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                    <input id="finish_project" type="date" class="form-control " name="finish_project" />
+                                    <input id="add-finish-aktivitas" type="date" class="form-control " name="finish_aktivitas" />
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label>Status</label>
-                            <select class="form-control select2bs4" style="width: 100%;" id="status_tools" name="status_tools">
-                                <option value="Aktif">Aktif</option>
-                                <option value="Non Aktif">Non Aktif</option>
-                            </select>
-                        </div>
+                                <label>Status</label>
+                                <select class="form-control select2bs4" style="width: 100%;" id="add-status-tools" name="status_aktivitas">
+                                    <option value="Aktif">Aktif</option>
+                                    <option value="Non Aktif">Non Aktif</option>
+                                </select>
+                            </div>
 
                             <div class="form-group">
                                 <label for="InputKeterangan">Keterangan</label>

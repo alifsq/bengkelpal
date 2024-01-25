@@ -19,7 +19,8 @@ class AktivitasSeeder extends Seeder
             'id_project' => '1',
             'nama_aktivitas' => 'BRS 1 ',
             'status_aktivitas' => 'On Track',
-            'tanggal_aktivitas' => '2024-01-02',
+            'start_aktivitas' => '2024-01-02',
+            'finish_aktivitas' => '2024-01-02',
             'keterangan_aktivitas'=> 'Pekerjaan pemasangan electrical engine',
         ]);
     }

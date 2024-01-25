@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreign('id_project')->references('id')->on('project_menus')->onDelete('cascade');
             $table->string('nama_aktivitas');
             $table->string('status_aktivitas');
-            $table->date('tanggal_aktivitas');
+            $table->date('start_aktivitas');
+            $table->date('finish_aktivitas');
             $table->string('keterangan_aktivitas');
             $table->timestamps();
         });
