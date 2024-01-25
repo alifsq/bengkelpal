@@ -18,6 +18,9 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <div class="d-flex justify-content-end mb-2">
+        <button type="button" class="btn btn-default bg-green sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-add">Tambah Project</button>
+    </div>
 
 
   </div>
