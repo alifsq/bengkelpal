@@ -33,6 +33,7 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
+                        <th class="text-center">ID Tools</th>
                         <th class="text-center">Nama Tools</th>
                         <th class="text-center">Jumlah Tools</th>
                         <th class="text-center">Status Tools</th>
@@ -44,6 +45,7 @@
                 <tbody>
                     @foreach ($data as $item)
                     <tr>
+                        <td>{{ $item->id }}</td>
                         <td>{{ $item->nama_tools }}</td>
                         <td>{{ $item->jumlah_tools }}</td>
                         <td>{{ $item->status_tools }}</td>
@@ -70,7 +72,7 @@
                     @endforeach
                 </tbody>
 
-                <tfoot>
+                <!-- <tfoot>
                     <tr>
                         <th class="text-center">Nama Tools</th>
                         <th class="text-center">Jumlah Tools</th>
@@ -78,7 +80,7 @@
                         <th class="text-center">Tanggal Kalibrasi</th>
                         <th class="text-center">Aksi</th>
                     </tr>
-                </tfoot>
+                </tfoot> -->
             </table>
         </div>
         <!-- /.card-body -->

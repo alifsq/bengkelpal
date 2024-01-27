@@ -66,7 +66,7 @@
                     </tr>
                     @endforeach
                 </tbody>
-                <tfoot>
+                <!-- <tfoot>
                     <tr>
                         <th class="text-center">ID Pegawai</th>
                         <th class="text-center">Nip Pegawai</th>
@@ -74,7 +74,7 @@
                         <th class="text-center">Jabatan</th>
                         <th class="text-center">Aksi</th>
                     </tr>
-                </tfoot>
+                </tfoot> -->
             </table>
         </div>
         <!-- /.card-body -->

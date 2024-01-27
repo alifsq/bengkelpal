@@ -43,5 +43,24 @@
             $('#kalibrasi_date-edit').val(kalibrasi_date);
             $('#formEdit').attr("action", "/tools/" + id);
         });
+        $(document).on('click', '#btn-edit-aktivitas', function() {
+            var id = $(this).data('id');
+            var id_project = $(this).data('id_project');
+            var nama_aktivitas = $(this).data('nama_aktivitas');
+            var start_aktivitas = $(this).data('start_aktivitas');
+            var finish_aktivitas = $(this).data('finish_aktivitas');
+            var status_aktivitas = $(this).data('status_aktivitas');
+            var keterangan_aktivitas = $(this).data('keterangan_aktivitas');
+
+            $('#modal-edit-aktivitas').modal('show');
+            $('#id').val(id);
+            $('#id_project-edit').val(id_project);
+            $('#nama_aktivitas-edit').val(nama_aktivitas);
+            $('#start_aktivitas-edit').val(start_aktivitas);
+            $('#finish_aktivitas-edit').val(finish_aktivitas);
+            $('#status_aktivitas-edit').val(status_aktivitas);
+            $('#keterangan_aktivitas-edit').val(keterangan_aktivitas);
+            $('#formEdit').attr("action", "/aktivitas/" + id);
+        });
     });
 </script>

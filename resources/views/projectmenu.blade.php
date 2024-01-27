@@ -35,9 +35,11 @@
                     <tr>
                         <th class="text-center">ID Project</th>
                         <th class="text-center">Nama Project</th>
-                        <th class="text-center">Tanggal Mulai / Selesai</th>
+                        <th class="text-center">Tanggal Mulai</th>
+                        <th class="text-center">Tanggal Selesai</th>
                         <th class="text-center">Keterangan</th>
                         <th class="text-center">Aksi</th>
+                    </tr>
                     </tr>
                     </tr>
                 </thead>
@@ -46,7 +48,8 @@
                     <tr>
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->nama_project }}</td>
-                        <td>{{ $item->start_project }} / {{ $item->finish_project }}</td>
+                        <td>{{ $item->start_project }}</td>
+                        <td>{{ $item->finish_project }}</td>
                         <td>{{ $item->keterangan_project }}</td>
                         <td>
                             <div class="float-lg-right">
@@ -69,15 +72,14 @@
                     </tr>
                     @endforeach
                 </tbody>
-
                 <tfoot>
-                    <tr>
+                    <!-- <tr>
                         <th class="text-center">ID Project</th>
                         <th class="text-center">Nama Project</th>
                         <th class="text-center">Tanggal Mulai - Selesai</th>
                         <th class="text-center">Keterangan</th>
                         <th class="text-center">Aksi</th>
-                    </tr>
+                    </tr> -->
                 </tfoot>
             </table>
         </div>

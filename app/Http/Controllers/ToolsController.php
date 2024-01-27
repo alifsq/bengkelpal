@@ -38,6 +38,7 @@ class ToolsController extends Controller
         ]);
 
         $kegiatans = Tool::find($id);
+
         $kegiatans->nama_tools = $validatedData['nama_tools'];
         $kegiatans->jumlah_tools = $validatedData['jumlah_tools'];
         $kegiatans->status_tools = $validatedData['status_tools'];

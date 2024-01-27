@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Revisi_gambar extends Model
 {
+    public function project()
+    {
+        return $this->hasOne(Project_menu::class, 'id_project');
+    }
     protected $fillable = [
         'id_project',
         'status_revisi',
