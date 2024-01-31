@@ -124,18 +124,16 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open ">
-                            <a href="/dashboard" class="nav-link active">
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link {{ $sidebar === 'Dashboard' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item {{ $sidebar === 'Project' ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ $sidebar === 'Project' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Project
@@ -144,7 +142,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/projectmenu" class="nav-link active">
+                                    <a href="/projectmenu" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Menu</p>
                                     </a>
@@ -158,7 +156,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/tools" class="nav-link">
+                            <a href="/tools" class="nav-link {{ $sidebar === 'Tools' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Tools
@@ -166,7 +164,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/aktivitas" class="nav-link">
+                            <a href="/aktivitas"  class="nav-link {{ $sidebar === 'Aktivitas' ? 'active' : '' }}">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Aktivitas
@@ -174,7 +172,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/revisigambar" class="nav-link">
+                            <a href="/revisigambar" class="nav-link {{ $sidebar === 'Revisigambar' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Revisi Gambar
@@ -182,7 +180,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/notifikasi" class="nav-link">
+                            <a href="/notifikasi" class="nav-link {{ $sidebar === 'Notifikasi' ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Notifikasi
@@ -265,6 +263,8 @@
     <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
     <!-- Page specific script -->
     <script>
         $(function() {
@@ -284,7 +284,7 @@
             $('#example2').DataTable({
                 "paging": true,
                 "lengthChange": false,
-                "searching": false,
+                "searching": true,
                 "ordering": true,
                 "info": true,
                 "autoWidth": false,

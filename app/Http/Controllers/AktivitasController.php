@@ -16,6 +16,7 @@ class AktivitasController extends Controller
             'judul' => 'aktivitas',
             'isicombo' => Project_menu::get(),
             'data' => $data,
+            'sidebar'=> 'Aktivitas',
 
         ]);
     }
@@ -29,6 +30,7 @@ class AktivitasController extends Controller
             'status_aktivitas' => 'required',
             'keterangan_aktivitas' => 'required',
         ]);
+
         Aktivitas::create($validatedData); //untuk menyimpan data
 
         // toast('Registration has been successful','success');
@@ -48,10 +50,10 @@ class AktivitasController extends Controller
         $kegiatans = Aktivitas::find($id);
         $kegiatans->id_project = $validatedData['id_project'];
         $kegiatans->nama_aktivitas = $validatedData['nama_aktivitas'];
-        $kegiatans->start_project = $validatedData['start_project'];
-        $kegiatans->finish_project = $validatedData['finish_project'];
-        $kegiatans->status_project = $validatedData['status_project'];
-        $kegiatans->keterangan_project = $validatedData['keterangan_project'];
+        $kegiatans->start_aktivitas = $validatedData['start_aktivitas'];
+        $kegiatans->finish_aktivitas = $validatedData['finish_aktivitas'];
+        $kegiatans->status_aktivitas = $validatedData['status_aktivitas'];
+        $kegiatans->keterangan_aktivitas = $validatedData['keterangan_aktivitas'];
 
         $kegiatans->save();
 

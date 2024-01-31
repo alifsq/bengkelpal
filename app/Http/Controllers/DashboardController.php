@@ -3,15 +3,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aktivitas;
 use App\Models\Menu_lanjutan;
 use App\Models\Project_menu;
 use App\Models\Tool;
+use Illuminate\Support\Facades\DB;
+
 
 class DashboardController extends Controller
 {
     public function index()
     {
-
         return view('dashboard', [
             'judul' => 'Dashboard',
             'sidebar'=>'Dashboard',

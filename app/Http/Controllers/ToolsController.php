@@ -12,7 +12,8 @@ class ToolsController extends Controller
         $data = Tool::all();
         return view('tools', [
             'judul' => 'tools',
-            'data' => $data
+            'data' => $data,
+            'sidebar'=> 'Tools',
         ]);
     }
     public function store(Request $request)

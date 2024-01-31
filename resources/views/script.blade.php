@@ -54,13 +54,41 @@
 
             $('#modal-edit-aktivitas').modal('show');
             $('#id').val(id);
-            $('#id_project-edit').val(id_project);
+            $('#id_project-edit').val(id_project).change();
             $('#nama_aktivitas-edit').val(nama_aktivitas);
             $('#start_aktivitas-edit').val(start_aktivitas);
             $('#finish_aktivitas-edit').val(finish_aktivitas);
-            $('#status_aktivitas-edit').val(status_aktivitas);
+            $('#status_aktivitas-edit').val(status_aktivitas).change();
             $('#keterangan_aktivitas-edit').val(keterangan_aktivitas);
             $('#formEdit').attr("action", "/aktivitas/" + id);
+        });
+        $(document).on('click', '#btn-edit-revisigambar', function() {
+            var id = $(this).data('id');
+            var id_project = $(this).data('id_project');
+            var judul_revisi = $(this).data('judul_revisi');
+            var status_revisi = $(this).data('status_revisi');
+            var keterangan_revisi = $(this).data('keterangan_revisi');
+
+            $('#modal-edit-revisi').modal('show');
+            $('#id').val(id);
+            $('#id_project-edit').val(id_project).change();
+            $('#judul_revisi-edit').val(judul_revisi);
+            $('#status_revisi-edit').val(status_revisi).change();
+            $('#keterangan_revisi-edit').val(keterangan_revisi);
+
+            $('#formEdit').attr("action", "/revisigambar/" + id);
+        });
+        $(document).on('click', '#btn-edit-notifikasi', function() {
+            var id = $(this).data('id');
+            var status = $(this).data('status');
+            var keterangan = $(this).data('keterangan');
+
+            $('#modal-edit-notifikasi').modal('show');
+            $('#id').val(id);
+            $('#status_notifikasi-edit').val(status).change();
+            $('#keterangan_notifikasi-edit').val(keterangan);
+
+            $('#formEdit').attr("action", "/notifikasi/" + id);
         });
     });
 </script>

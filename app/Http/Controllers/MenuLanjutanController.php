@@ -13,7 +13,7 @@ class MenuLanjutanController extends Controller
         return view('menulanjutan', [
             'judul' => 'menulanjutan',
             'data' => $data,
-            'sidebar'=>'Menulanjutan',
+            'sidebar'=>'Project',
         ]);
     }
     public function store(Request $request)

@@ -13,7 +13,8 @@ class ProjectMenuController extends Controller
         $data = Project_menu::all();
         return view('projectmenu', [
             'judul' => 'Projectmenu',
-            'data' => $data
+            'data' => $data,
+            'sidebar'=> 'Project'
         ]);
     }
     public function store(Request $request)

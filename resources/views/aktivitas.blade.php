@@ -67,7 +67,7 @@
                             </div>
                             <!--Tombol edit-->
                             <div class="float-lg-right">
-                                <button id="btn-edit-aktivitas" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-start_project="{{ $item->start_project }}" data-finish_project="{{ $item->finish_project }}" data-keterangan_project="{{ $item->keterangan_project }}">
+                            <button id="btn-edit-aktivitas" type="button" class="btn btn-default bg-blue sm-right mr-3 mb-3" data-toggle="modal" data-target="#modal-edit-aktivitas" data-id="{{ $item->id }}" data-nama_project="{{ $item->nama_project }}" data-nama_aktivitas="{{ $item->nama_aktivitas }}" data-status_aktivitas="{{ $item->status_aktivitas }}" data-start_aktivitas="{{ $item->start_aktivitas }}"   data-finish_aktivitas="{{ $item->finish_aktivitas }}"   data-keterangan_aktivitas="{{ $item->keterangan_aktivitas }}" data-id_project="{{ $item->id_project }}">
                                     <i class="fas fa-edit"></i>
                                 </button>
                             </div>
@@ -110,7 +110,7 @@
                             <!--select Project-->
                             <div class="form-group">
                                 <label>Project</label>
-                                <select class="form-control select2bs4" style="width: 100%;" name="id_project">
+                                <select class="form-control select2bs4" style="width: 100%" name="id_project">
                                 @foreach($isicombo as $a)
                                     <option value="{{ $a->id }}"> {{ $a->nama_project }}</option>
                                 @endforeach
@@ -162,7 +162,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal Add Data-->
-    <!-- /.modal Add Data-->
+    <!-- /.modal Edit Data-->
     <div class="modal fade" id="modal-edit-aktivitas">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -174,14 +174,14 @@
                 </div>
 
                 <div class="modal-body">
-                    <form method="POST" action="/aktivitas">
+                    <form method="POST" id="formEdit">
                         @csrf
                         @method("PUT")
                         <div class="card-body">
                             <!--select Project-->
                             <div class="form-group">
                                 <label>Project</label>
-                                <select class="form-control select2bs4" style="width: 100%;" id="id_project" name="id_project">
+                                <select class="form-control select2bs4" style="width: 100%;" id="id_project-edit" name="id_project">
                                     @foreach($isicombo as $a)
                                     <option value="{{ $a->id }}"> {{ $a->nama_project }}</option>
                                     @endforeach
@@ -190,24 +190,24 @@
                             <!--/select Project-->
                             <div class="form-group">
                                 <label for="InputNama">Nama Aktivitas</label>
-                                <input type="text" class="form-control" id="nama_aktivitas" placeholder="Nama Aktivitas" name="nama_aktivitas">
+                                <input type="text" class="form-control" id="nama_aktivitas-edit"  name="nama_aktivitas">
                             </div>
                             <!--/Date-->
                             <div class="form-group">
                                 <label>Tanggal Mulai</label>
-                                <div class="input-group date" id="reservationdate" data-target-input="nearest" name="start_aktivitas">
-                                    <input id="start_aktivitas" type="date" class="form-control " name="start_aktivitas" />
+                                <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                    <input id="start_aktivitas-edit" type="date" class="form-control " name="start_aktivitas" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Tanggal Selesai</label>
-                                <div class="input-group date" id="finish_aktivitas" data-target-input="nearest" name="finish_aktivitas">
-                                    <input id="add-start-aktivitas" type="date" class="form-control " name="start_aktivitas" />
+                                <div class="input-group date" id="finish_aktivitas" data-target-input="nearest">
+                                    <input id="finish_aktivitas-edit" type="date" class="form-control " name="finish_aktivitas" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Status</label>
-                                <select class="form-control select2bs4" style="width: 100%;" id="status_aktivitas" name="status_aktivitas">
+                                <select class="form-control select2bs4" style="width: 100%;" id="status_aktivitas-edit" name="status_aktivitas">
                                     <option value="Aktif">Aktif</option>
                                     <option value="Non Aktif">Non Aktif</option>
                                 </select>
@@ -215,7 +215,7 @@
 
                             <div class="form-group">
                                 <label for="InputKeterangan">Keterangan</label>
-                                <input type="text" class="form-control" id="InputKeterangan" placeholder="Keterangan" name="keterangan_aktivitas">
+                                <input type="text" class="form-control" id="keterangan_aktivitas-edit" name="keterangan_aktivitas">
                             </div>
                         </div>
                         <div class="modal-footer justify-content-between">
@@ -232,9 +232,7 @@
 
         <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal Add Data-->
-
-
+    <!-- /.modal Edit Data-->
 
 
 </div>
