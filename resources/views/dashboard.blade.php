@@ -50,7 +50,7 @@
                         <div class="icon">
                         <i class="ion ion-person"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/menulanjutan" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -65,7 +65,7 @@
                         <div class="icon">
                             <i class="ion ion-hammer"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/tools" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -80,7 +80,7 @@
                         <div class="icon">
                             <i class="ion ion-hammer"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/tools" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
