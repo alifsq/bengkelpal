@@ -33,24 +33,24 @@
                             <p>Project Active</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="ion ion-podium"></i>
                         </div>
-                        <a href="/projectmenu" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/projectmenu" class="small-box-footer">Selengkapnya<i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-success">
+                    <div class="small-box bg-green border border-gray-500">
                         <div class="inner">
                             <h3>{{ $jml_person }}</h3>
 
                             <p>Person Active</p>
                         </div>
                         <div class="icon">
-                            <i class="fa-solid fa-person"></i>
+                        <i class="ion ion-person"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -63,24 +63,24 @@
                             <p>Tools Active</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="ion ion-hammer"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
-                    <div class="small-box bg-danger">
+                    <div class="small-box bg-gradient-red">
                         <div class="inner">
                             <h3>{{ $jml_toolsnon }}</h3>
 
                             <p>Tools NonActive</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
+                            <i class="ion ion-hammer"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Selengkapnya <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -88,31 +88,77 @@
             <!-- /.row -->
             <!-- Main row -->
             <!-- LINE CHART -->
+            <!-- LINE CHART -->
             <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Line Chart</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                <div class="card-header bg-blue">
+                    <h3 class="card-title">Project Grafik</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="chart">
-                  <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
                 </div>
-              </div>
-              <!-- /.card-body -->
+                <!-- /.card-body -->
             </div>
             <!-- /.card -->
+            <!-- BAR CHART -->
+            <div class="card card-success">
+                <div class="card-header bg-blue">
+                    <h3 class="card-title">Aktivitas Grafik</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart">
+                        <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div class="card card-info">
+                <div class="card-header bg-blue">
+                    <h3 class="card-title">Notifikasi</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="example1" class="table">
+                        <tbody>
+                            @foreach($data as $d)
+                            <tr>
+                                @if($d->status === 'Aktif')
+                            <tr class="text-green">
+                                <td class="text-lg">{{ $d->keterangan }}</td>
+                                <td> <i class="fas fa-arrow-up text-green text-lg"></i></td>
+                            </tr>
+                            @else
+                            <tr class="text-red">
+                                <td class="text-lg">{{ $d->keterangan }}</td>
+                                <td><i class="fas fa-arrow-down text-lg"></i></td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
             <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 </div>
-
 @endsection
