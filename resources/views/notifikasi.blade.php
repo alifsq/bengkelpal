@@ -34,6 +34,8 @@
                         <th class="text-center">ID Notifikasi</th>
                         <th class="text-center">Status</th>
                         <th class="text-center">Keterangan</th>
+                        <th class="text-center">Aksi</th>
+
                     </tr>
                     </tr>
                 </thead>
