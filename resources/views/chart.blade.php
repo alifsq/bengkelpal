@@ -80,13 +80,19 @@
             return item.aktivitas_count;
         });
 
-        console.log(aktivitasCounts);
+        // console,log(aktivitasCounts);
+
+        var toolsCounts = projectsPerMonth.map(function(item) {
+            return item.tools_count;
+        });
+
+        // console,log(toolsCounts);
 
 
         var areaChartDataBar = {
             labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
             datasets: [{
-                    label: 'Digital Goods',
+                    label: 'Aktivitas',
                     backgroundColor: 'rgba(60,141,188,0.9)',
                     borderColor: 'rgba(60,141,188,0.8)',
                     pointRadius: false,
@@ -97,7 +103,7 @@
                     data: aktivitasCounts,
                 },
                 {
-                    label: 'Electronics',
+                    label: 'Tools',
                     backgroundColor: 'rgba(210, 214, 222, 1)',
                     borderColor: 'rgba(210, 214, 222, 1)',
                     pointRadius: false,
@@ -105,7 +111,7 @@
                     pointStrokeColor: '#c1c7d1',
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
-
+                    data: toolsCounts,
                 },
             ]
         }
