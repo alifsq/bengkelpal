@@ -109,7 +109,7 @@
             <!-- BAR CHART -->
             <div class="card card-success">
                 <div class="card-header bg-blue">
-                    <h3 class="card-title">Aktivitas Grafik</h3>
+                    <h3 class="card-title">Aktivitas & Tools Grafik</h3>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
