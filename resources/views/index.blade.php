@@ -187,6 +187,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item bg-red rounded-lg">
+                            <a href="/logout" class="nav-link {{ $sidebar === 'Notifikasi' ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-log-out"></i>
+                                <p>
+                                    Log Out
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

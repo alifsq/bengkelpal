@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             AktivitasSeeder::class,
             ToolSeeder::class,
             RevisiGambarSeeder::class,
+            UserSeeder::class,
         ]);
-
     }
 }
