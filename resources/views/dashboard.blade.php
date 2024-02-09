@@ -75,7 +75,7 @@
                         <div class="inner">
                             <h3>{{ $jml_toolsnon }}</h3>
 
-                            <p>Tools NonActive</p>
+                            <p>Tools Need Calibration</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-hammer"></i>
@@ -139,7 +139,7 @@
                         <tbody>
                             @foreach($data as $d)
                             <tr>
-                                @if($d->status === 'Aktif')
+                                @if($d->status === 'Percepatan')
                             <tr class="text-green">
                                 <td class="text-lg">{{ $d->keterangan }}</td>
                                 <td> <i class="fas fa-arrow-up text-green text-lg"></i></td>

@@ -53,7 +53,7 @@
                         <td>{{ $item->nama_aktivitas }}</td>
                         <td>{{ $item->start_aktivitas }}</td>
                         <td>{{ $item->finish_aktivitas }}</td>
-                        <td>{{ $item->status_aktivitas }}</td>
+                        <td><mark style="{{ ($item->status_aktivitas==='Aktif')?'background-color:green':'background-color:red' }}">{{ $item->status_aktivitas }}</mark></td>
                         <td>{{ $item->keterangan_aktivitas }}</td>
                         <td>
                             <div class="float-lg-right">

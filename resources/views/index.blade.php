@@ -150,7 +150,7 @@
                                 <li class="nav-item">
                                     <a href="/menulanjutan" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Menu Lanjutan</p>
+                                        <p>Anggota Bengkel Sistem</p>
                                     </a>
                                 </li>
                             </ul>
@@ -188,8 +188,7 @@
                             </a>
                         </li>
                         <li class="nav-item bg-red rounded-lg">
-                            <a href="/logout" class="nav-link {{ $sidebar === 'Notifikasi' ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-log-out"></i>
+                            <a href="/logout" class="nav-link">
                                 <p>
                                     Log Out
                                 </p>

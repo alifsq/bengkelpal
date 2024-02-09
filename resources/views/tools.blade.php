@@ -48,7 +48,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->nama_tools }}</td>
                         <td>{{ $item->jumlah_tools }}</td>
-                        <td>{{ $item->status_tools }}</td>
+                        <td><mark style="{{ ($item->status_tools==='Tools Active')?'background-color:green':'background-color:red' }}">{{ $item->status_tools }}</mark></td>
                         <td>{{ $item->kalibrasi_date }}</td>
                         <td>
                             <div class="float-lg-right">
@@ -112,8 +112,8 @@
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control select2bs4" style="width: 100%;" id="status_tools" name="status_tools">
-                                <option value="Aktif">Aktif</option>
-                                <option value="Non Aktif">Non Aktif</option>
+                                <option value="Tools Active">Tools Aktif</option>
+                                <option value="Tools Need Calibration">Tools Need Calibration</option>
                             </select>
                         </div>
                         <!--/Date-->
@@ -165,8 +165,8 @@
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control select2bs4" style="width: 100%;" id="status_tools-edit" name="status_tools">
-                                <option value="Aktif">Aktif</option>
-                                <option value="Non Aktif">Non Aktif</option>
+                            <option value="Tools Active" >Tools Active</option>
+                                <option value="Tools Need Calibration">Tools Need Calibration</option>
                             </select>
                         </div>
                         <!--/Date-->

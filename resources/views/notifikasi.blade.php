@@ -43,7 +43,7 @@
                     @foreach ($data as $item)
                     <tr>
                         <td>{{ $item->id }}</td>
-                        <td>{{ $item->status }}</td>
+                        <td><mark style="{{ ($item->status==='Percepatan')?'background-color:green':'background-color:red' }}">{{ $item->status }}</mark></td>
                         <td>{{ $item->keterangan }}</td>
                         <td>
                             <div class="float-lg-right">
@@ -97,8 +97,8 @@
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control select2bs4" style="width: 100%;" id="status_notifikasi" name="status">
-                                    <option value="Aktif">Aktif</option>
-                                    <option value="Non Aktif">Non Aktif</option>
+                                    <option value="Percepatan">Percepatan</option>
+                                    <option value="Keterlambatan">Keterlambatan</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -136,8 +136,8 @@
                             <div class="form-group">
                                 <label>Status</label>
                                 <select class="form-control select2bs4" style="width: 100%;" id="status_notifikasi-edit" name="status">
-                                    <option value="Aktif">Aktif</option>
-                                    <option value="Non Aktif">Non Aktif</option>
+                                <option value="Percepatan">Percepatan</option>
+                                    <option value="Keterlambatan">Keterlambatan</option>
                                 </select>
                             </div>
                             <div class="form-group">

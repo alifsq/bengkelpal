@@ -48,7 +48,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->project->nama_project }}</td>
                         <td>{{ $item->judul_revisi }}</td>
-                        <td>{{ $item->status_revisi }}</td>
+                        <td><mark style="{{ ($item->status_revisi==='Aktif')?'background-color:green':'background-color:red' }}">{{ $item->status_revisi }}</mark></td>
                         <td>{{ $item->keterangan_revisi }}</td>
                         <td>
                             <div class="float-lg-right">
@@ -100,7 +100,6 @@
                 <div class="modal-body">
                     <form method="POST" action="/revisigambar">
                         @csrf
-
                         <!--/select Project-->
                         <!--select Project-->
                         <div class="form-group">
