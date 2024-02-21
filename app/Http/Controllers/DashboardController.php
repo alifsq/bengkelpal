@@ -57,8 +57,8 @@ class DashboardController extends Controller
             'sidebar' => 'Dashboard',
             'jml_project' => Project_menu::count(),
             'jml_person' => Menu_lanjutan::count(),
-            'jml_toolsnon' => Tool::where('status_tools', 'Non Aktif')->count(),
-            'jml_toolsactive' => Tool::where('status_tools', 'Aktif')->count(),
+            'jml_toolsnon' => Tool::where('status_tools', 'Tools Need Calibration')->count(),
+            'jml_toolsactive' => Tool::where('status_tools', 'Tools Active')->count(),
             'result' => $result,
             'data' => $data,
         ]);

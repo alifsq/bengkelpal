@@ -116,7 +116,7 @@
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
                 <img src="dist/img/PTPALLogo.png" alt="PTPAL Logo" class="brand-image img-square elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-bold">Manrisk</span>
+                <span class="brand-text font-weight-bold">HO (Hull Outfiting)</span>
             </a>
 
             <!-- Sidebar -->
